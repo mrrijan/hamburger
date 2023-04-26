@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    background-color: #262626;
+}
+li{
+    list-style: none;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2em;
+    min-height: 100px;
+}
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5em;
+}
+.nav-branding{
+    font-size: 2em;
+}
+.nav-link:hover{
+    color: dodgerblue;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 5px;
+    background-color: white;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+@media(max-width:768px)
+{
+    .burger{
+        display: block;
+    }
+    .burger.active .bar:nth-child(2)
+    {
+        opacity: 0;
+    }
+    .burger.active .bar:nth-child(1)
+    {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .burger.active .bar:nth-child(3)
+    {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        left: 100%;
+        width: 100%;
+        gap: 0;
+        top: 70px;
+        transition: 0.3s;
+        flex-direction: column;
+        text-align: center;
+        background-color: #262626;
+    }
+    .nav-list
+    {
+        margin: 2rem 0;
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+}
